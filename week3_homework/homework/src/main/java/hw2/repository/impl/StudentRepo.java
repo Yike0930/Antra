@@ -19,7 +19,7 @@ public class StudentRepo {
     @Autowired
     private StudentRepository studentRepository;
 
-    private final Map<Integer, Student> studentMap = new HashMap<>();
+//    private final Map<Integer, Student> studentMap = new HashMap<>();
 
 //    public StudentRepo() {
 //        studentMap.put(1, new Student(1, "Tom", new ArrayList<Student_Project>()));
