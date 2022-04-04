@@ -1,6 +1,7 @@
 package hw2.controller;
 
 import hw2.security.pojo.JwtUser;
+import hw2.security.service.JwtUserDetailsService;
 import hw2.security.utility.JwtTokenUtil;
 import lombok.Value;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,13 +22,13 @@ public class UserController {
     private JwtTokenUtil jwtTokenUtil;
 
     @Autowired
-    private UserDetailsService userDetailsService;
+    private JwtUserDetailsService jwtUserDetailsService;
 
     @RequestMapping(value = "user", method = RequestMethod.GET)
     public JwtUser getAuthenticatedUser(HttpServletRequest request) {
         String token = request.getHeader(tokenHeader);
         String username = jwtTokenUtil.getUsernameFromToken(token);
-        JwtUser user = (JwtUser) userDetailsService.loadUserByUsername(username);
+        JwtUser user = (JwtUser) jwtUserDetailsService.loadUserByUsername(username);
         return user;
     }
 
