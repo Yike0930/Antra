@@ -1,0 +1,15 @@
+link => employee info : http://dummy.restapiexample.com/api/v1/employees
+
+homework : 
+	1. create two url 
+		get all employee  (group by age)
+		get all employee by age 
+	2. controller 
+	    service  ->  link
+   	    pojo
+	3. rest template
+	* retry feature
+	* swagger
+
+haven't finish retry feature and swagger
+
